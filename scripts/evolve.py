@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-KINDS = {"rule", "hook", "skill", "test", "doc"}
+KINDS = {"code", "rule", "hook", "skill", "test", "doc"}
 
 
 def main():
