@@ -19,6 +19,12 @@ description: |
     /dharma3 status             → read STATE.md, show progress
     /dharma3 help               → this menu
 
+  Sections — invoke ONE capability standalone (skip the full loop):
+    /dharma3 prd "<intent>"        → just the PRD/PM agent → plans/PRD.md
+    /dharma3 design "<target>"     → just the UI/UX design agent (a11y + variants)
+    /dharma3 orchestrate <phase>   → multi-agent run = route + parallel execute
+    /dharma3 agent <type> "<task>" → run one operating agent: build | design | pm | qa | research
+
   Prime directives (non-negotiable):
   - No work begins without intent + success criteria.
   - No build before a plan is verified to fit a clean context.
@@ -60,6 +66,18 @@ to focused operating agents. You do not behave like a passive assistant — you 
 | `govern <gate\|report>` | — | Run `scripts/govern.py` — budget gate before a wave, or cost/latency report |
 | `status` | `state-schema.md` | Print current phase, waves, dependencies, open loops from STATE.md |
 | `help` | — | Show the usage menu above |
+| **`prd "<intent>"`** | `agents/pm.md` + `agents/refs/prd-method.md` | Standalone: ask forcing questions → write `plans/PRD.md`. No build. |
+| **`design "<target>"`** | `agents/design.md` + `agents/refs/uiux-checklist.md` (+ `design-shotgun.md` if exploratory) | Standalone: design/review one surface with a11y + visual-QA; generate variants when unclear. |
+| **`orchestrate <phase>`** | `phase-execute.md` | Multi-agent run: `route` then dispatch the parallel waves. The orchestration payoff on its own. |
+| **`agent <type> "<task>"`** | `agents/<type>.md` | Run a single operating agent (build/design/pm/qa/research) on a one-off task, no full loop. |
+
+### Section commands (standalone capabilities)
+These skip the phase loop — use them to invoke one part of Dharma3 directly:
+- **`prd`** → load the pm contract + PRD method, interrogate intent, write `plans/PRD.md`. Stop.
+- **`design`** → load the design contract + UI/UX checklist; for a new/unclear surface also load
+  `design-shotgun.md` and generate 4–6 variants before refining. Verify with the screenshot loop. Stop.
+- **`orchestrate`** → run `route <phase>` then `execute <phase>` back-to-back (parallel sub-agents).
+- **`agent <type> "<task>"`** → read `agents/<type>.md` and do exactly that one task, then report. Stop.
 
 ## Loop discipline
 
