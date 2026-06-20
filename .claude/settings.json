@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/session_start_load_state.py\"" }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/session_end_capture.py\"" }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Write|Edit|Read",
+        "hooks": [
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/pre_tool_use_security.py\"" }
+        ]
+      }
+    ]
+  }
+}
