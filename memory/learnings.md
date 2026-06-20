@@ -13,3 +13,9 @@ Every bug/rework converted into a permanent upgrade.
 
 - **2026-06-20** — Progression: project resolution relied on possibly-empty CLAUDE_PROJECT_DIR; HOME guard compared unresolved path
   → upgrade (code): unified start via hook cwd + HOME.resolve() in guards (mem_capture)
+
+- **2026-06-20** — Progression: deep synthesis (decisions) required a manual mem_synthesize run
+  → upgrade (code): deterministic _extract_decisions → CANDIDATE entries in .agent/DECISIONS.md on capture (promotion stays human-gated, O6)
+
+- **2026-06-20** — Progression: long live sessions were a blind spot until SessionEnd/PreCompact
+  → upgrade (code): added --checkpoint mode + throttled Stop hook → mid-session capture (updates CURRENT+digest, skips daily)
